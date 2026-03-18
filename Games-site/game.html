@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play Game</title>
+  <style>
+    body { margin:0; background:black; }
+    iframe { width:100vw; height:100vh; border:none; }
+
+    button {
+      position:fixed;
+      top:10px;
+      right:10px;
+      padding:10px;
+      border:none;
+      background:#1e293b;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="goFull()">Fullscreen</button>
+
+<iframe id="frame"></iframe>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById('frame').src = params.get('src');
+
+function goFull(){
+  document.documentElement.requestFullscreen();
+}
+</script>
+
+</body>
+</html>
